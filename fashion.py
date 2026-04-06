@@ -1,4 +1,3 @@
-# app.py
 import streamlit as st
 import tensorflow as tf
 import numpy as np
@@ -19,7 +18,7 @@ st.set_page_config(
 st.markdown(
     """
 <style>
-/* 1.  “Browse files” button  -------------------------------------------------*/
+/* 1.  "Browse files" button  -------------------------------------------------*/
 [data-testid="stFileUploader"] button{
     background:linear-gradient(90deg,#ff8a00,#e52e71);
     color:white;
@@ -44,7 +43,7 @@ st.markdown(
 }
 [data-testid="stFileUploader"] button:active{transform:scale(.98);}
 
-/* 2.  Uploaded–file “chip” ---------------------------------------------------*/
+/* 2.  Uploaded–file "chip" ---------------------------------------------------*/
 [data-testid="stFileUploaderFile"]{
     display:flex;
     align-items:center;
@@ -83,6 +82,11 @@ st.markdown(
 [data-testid="stFileUploaderFile"]:focus-within{
     box-shadow:0 0 0 2px rgba(229,46,113,.6);
     outline:none;
+}
+
+/* Center title and subtitle ------------------------------------------------*/
+h1 {
+    text-align: center;
 }
 </style>
 """,
@@ -125,8 +129,8 @@ def preprocess_image(image: Image.Image):
 
 # ── UI ────────────────────────────────────────────────────────────────────────
 st.title("👗 Fashion MNIST Image Classifier")
-st.markdown("⬆️ Upload an image of a clothing item (e.g., shirt, sneaker, trouser), and the model will predict its category.")
-st.markdown("💡 **Tip: Centred images with a plain background work best.**")
+st.markdown("<p style='text-align: center;'>⬆️ Upload an image of a clothing item (e.g., shirt, sneaker, trouser), and the model will predict its category.</p>", unsafe_allow_html=True)
+st.markdown("<p style='text-align: center;'>💡 <b>Tip: Centred images with a plain background work best.</b></p>", unsafe_allow_html=True)
 
 st.sidebar.header("About")
 st.sidebar.info(
