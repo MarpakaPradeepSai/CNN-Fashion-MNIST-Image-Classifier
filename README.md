@@ -502,6 +502,8 @@ pip install -r requirements.txt
 
 </div>
 
+<br>
+
 ---
 
 ## 📜 License
